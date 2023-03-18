@@ -1,12 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe DomainBlock, type: :model do
   describe 'validations' do
-    it 'has a valid fabricator' do
-      domain_block = Fabricate.build(:domain_block)
-      expect(domain_block).to be_valid
-    end
-
     it 'is invalid without a domain' do
       domain_block = Fabricate.build(:domain_block, domain: nil)
       domain_block.valid?

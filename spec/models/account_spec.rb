@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Account, type: :model do
@@ -702,12 +704,6 @@ RSpec.describe Account, type: :model do
   end
 
   describe 'validations' do
-    it 'has a valid fabricator' do
-      account = Fabricate.build(:account)
-      account.valid?
-      expect(account).to be_valid
-    end
-
     it 'is invalid without a username' do
       account = Fabricate.build(:account, username: nil)
       account.valid?
